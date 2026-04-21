@@ -19,18 +19,19 @@
 
 //2.  Write a function called `createCalculator`. You must use closure to implement it.
 
-function createCalculator(number) {
+function createCalculator(value) {
+  let defaultValue = value;
+
   return {
-    sum: (n) => number + n,
-    mult: (n) => number * n,
-    sub: (n) => number - n,
-    div: (n) => number / n,
+    sum: (result) => (defaultValue += result),
+    mult: (result) => (defaultValue *= result),
+    sub: (result) => (defaultValue -= result),
+    div: (result) => (defaultValue /= result),
   };
 }
 
-const calc = createCalculator(50);
-
-console.log(calc.sum(5)); /// 55
-console.log(calc.mult(2)); // 100
-console.log(calc.sub(40)); // 10
-console.log(calc.div(10)); // 5
+const calc = createCalculator(10);
+console.log(calc.sum(5)); /// 15
+console.log(calc.mult(10)); // 150
+console.log(calc.sub(40)); // 110
+console.log(calc.div(10)); // 11
