@@ -51,13 +51,37 @@
 //3. Create a function called `isWeekend` that checks whether the specified date is a weekend day (Saturday or Sunday)
 // and returns a boolean value
 
-function isWeekend(date) {
-  let parsedDate = new Date(date);
-  let day = parsedDate.getDay();
+// function isWeekend(date) {
+//   let parsedDate = new Date(date);
+//   let day = parsedDate.getDay();
 
-  return day === 6 || day === 0;
-}
+//   return day === 6 || day === 0;
+// }
 
-console.log(isWeekend("2022-02-12")); // true
-console.log(isWeekend("2022-02-13")); // true
-console.log(isWeekend("2022-02-09")); // false
+// console.log(isWeekend("2022-02-12")); // true
+// console.log(isWeekend("2022-02-13")); // true
+// console.log(isWeekend("2022-02-09")); // false
+
+//4. When working with the JSON format, you must perform the following steps on this object:
+//Convert it to a JSON string
+//Convert it back to a JavaScript object
+//Use “destructuring” to create variables for each property of the object (fullName, street, city, house)
+
+const person = {
+  fullName: "Sherlock Holmes",
+  address: {
+    street: "Baker Street",
+    city: "London",
+    house: "221b",
+  },
+};
+
+const objToJSON = JSON.stringify(person);
+const JSONToObj = JSON.parse(objToJSON);
+
+const {
+  fullName,
+  address: { street, city, house },
+} = JSONToObj;
+
+console.log(`${fullName}-${street}-${city}-${house}`);
