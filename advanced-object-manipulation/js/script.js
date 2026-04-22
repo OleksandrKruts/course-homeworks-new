@@ -26,24 +26,38 @@
 // If the user enters an invalid date, log an error to the console and stop the function
 // If the user enters a start date that is later than the end date, log an error stating that the start date is later than the end date
 
-function getDiffDays(dateStart, dateEnd) {
-  let start = new Date(dateStart);
-  let end = new Date(dateEnd);
-  const dayInMs = 86400000;
+// function getDiffDays(dateStart, dateEnd) {
+//   let start = new Date(dateStart);
+//   let end = new Date(dateEnd);
+//   const dayInMs = 86400000;
 
-  if (isNaN(start.getTime()) || isNaN(end.getTime())) {
-    console.error("invalid date");
-    return;
-  } else if (start > end) {
-    console.error("your start date is later than end");
-    return;
-  }
+//   if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+//     console.error("invalid date");
+//     return;
+//   } else if (start > end) {
+//     console.error("your start date is later than end");
+//     return;
+//   }
 
-  let diffEndOfStart = (end - start) / dayInMs;
-  return diffEndOfStart;
+//   let diffEndOfStart = (end - start) / dayInMs;
+//   return diffEndOfStart;
+// }
+
+// console.log(getDiffDays("2020-01-01", "2020-01-17")); // 16
+// console.log(getDiffDays("2020-01-01", "2020-03-15")); // 74
+// console.log(getDiffDays("2222222222", "2020-03-15")); // Error: invalid date
+// console.log(getDiffDays("2021-01-02", "2020-03-15")); // Error: your start date is later than end
+
+//3. Create a function called `isWeekend` that checks whether the specified date is a weekend day (Saturday or Sunday)
+// and returns a boolean value
+
+function isWeekend(date) {
+  let parsedDate = new Date(date);
+  let day = parsedDate.getDay();
+
+  return day === 6 || day === 0;
 }
 
-console.log(getDiffDays("2020-01-01", "2020-01-17")); // 16
-console.log(getDiffDays("2020-01-01", "2020-03-15")); // 74
-console.log(getDiffDays("2222222222", "2020-03-15")); // Error: invalid date
-console.log(getDiffDays("2021-01-02", "2020-03-15")); // Error: your start date is later than end
+console.log(isWeekend("2022-02-12")); // true
+console.log(isWeekend("2022-02-13")); // true
+console.log(isWeekend("2022-02-09")); // false
