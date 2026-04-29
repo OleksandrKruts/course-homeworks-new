@@ -24,10 +24,22 @@
 //The function should not check whether the date is valid (for example, a user could enter the 32nd day of the month)—
 // it should specifically check the date format (YYYY/MM/DD HH:MM). To solve this problem, we will use regular expressions.
 
-function isValidDateFormat(str) {
-  const regexp = /^\d{4}\/\d{2}\/\d{2} \d{2}:\d{2}$/;
-  return regexp.test(str);
+// function isValidDateFormat(str) {
+//   const regexp = /^\d{4}\/\d{2}\/\d{2} \d{2}:\d{2}$/;
+//   return regexp.test(str);
+// }
+
+// console.log(isValidDateFormat("2012/09/18 12:10")); // true
+// console.log(isValidDateFormat("12.02.2022 12:10")); // false
+
+//3.Write a function called `isAfter` that takes two date arguments (these can be either `Date` objects or timestamps).
+// The function should return `true` if the first date passed is later than the second. Otherwise, return `false`.
+
+function isAfter(startDate, endDate) {
+  return startDate > endDate;
 }
 
-console.log(isValidDateFormat("2012/09/18 12:10")); // true
-console.log(isValidDateFormat("12.02.2022 12:10")); // false
+console.log(isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))); // true
+console.log(isAfter(1648636135000, 1648549735000)); // true
+console.log(isAfter(1648549735000, 1648636135000)); // false
+console.log(isAfter(1648549735000, new Date(1988, 1, 11))); // true
