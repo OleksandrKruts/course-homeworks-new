@@ -1,21 +1,52 @@
-#albums {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-  max-width: 600px;
+body {
+  background: #f5f7fa;
   font-family: Arial, sans-serif;
 }
 
+#albums {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
 .album_title {
-  background: #f4f4f4;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #ffffff;
   padding: 12px 15px;
-  border-radius: 8px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
   transition: 0.2s;
-  cursor: pointer;
 }
 
 .album_title:hover {
-  background: #e0e0e0;
-  transform: translateX(5px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* кнопка удаления */
+.delete_btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete_btn:hover {
+  background: #d9363e;
+}
+
+.delete_btn:active {
+  transform: scale(0.95);
 }
