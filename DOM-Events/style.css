@@ -1,0 +1,21 @@
+#albums {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+}
+
+.album_title {
+  background: #f4f4f4;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.album_title:hover {
+  background: #e0e0e0;
+  transform: translateX(5px);
+}
