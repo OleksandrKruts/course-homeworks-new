@@ -1,0 +1,94 @@
+body {
+  background: #f5f7fa;
+  font-family: Arial, sans-serif;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.delete-btn {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #d9363e;
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 250px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #4096ff;
+}
+
+.error {
+  border: 2px solid #ff4d4f;
+  background-color: #fff1f0;
+}
+
+.error-message {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+button[name="addButton"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #4096ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button[name="addButton"]:hover {
+  background: #1677ff;
+}
+
+button[name="addButton"]:active {
+  transform: scale(0.95);
+}
